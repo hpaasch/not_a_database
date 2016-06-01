@@ -2,6 +2,7 @@ import csv
 
 
 def activity():
+    print('-' * 40)
     action = input("(C)reate new user? (Q)uit? ").lower()  # add modify later.
     # if choose M, then present login row without username and allow changes. do a series?
     if action == "c":
@@ -11,7 +12,7 @@ def activity():
 
 
 def login():
-    print("This data is top secret, even by Gen. Petraeus standards. Login to continue.")
+    print("\nThis data is top secret, even by Gen. Petraeus standards. Login to continue.")
     while True:
         login_name = input("Username: ")
         login_password = input("Password: ")
@@ -23,7 +24,10 @@ def login():
                 if row["username"] == login_name:
                     if row["password"] == login_password:
                         print("Login successful.")
-                        print(row)  # make this pretty
+                        print('-' * 40)
+                        print("Username: {username}\n"
+                              "Full Name: {full_name}\n"
+                              "No. of dogs: {dog_count}".format(**row))  # make this pretty
                         activity()
                         return row
             else:
