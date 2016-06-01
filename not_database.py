@@ -21,16 +21,19 @@ def user_creation():
 def verify_login():
     while True:
         login_name = input("Username: ")
-        # login_password = input("Password: ")
+        login_password = input("Password: ")
 
         with open("data_not.csv") as outfile:
             user_data = csv.DictReader(outfile, fieldnames=["username", "password"])
             for row in user_data:
                 if row["username"] == login_name:
-                    print("name good.")
-                    return False
+                    if row["password"] == login_password:
+                        print("Login successful.")
+                        return False
+                    else:
+                        print("Login failed. Try again.")
                 else:
-                    print("es no bueno")
+                    print("Login failed. Try again.")
 
 
     # return login_status
