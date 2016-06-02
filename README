@@ -1,0 +1,11 @@
+Running not_database.py will start the program. It fulfills Normal Mode
+requirements such as:
+
+* Verifying username and password.
+* Showing user their own profile.
+* Inviting user to add another user.
+* Ensuring username uniqueness for new users.
+
+Hard Mode is not yet done. That would add:
+
+* User ability to update their own info, except for username.
